@@ -12,3 +12,12 @@ let somenum=33
 let strngnum = String (somenum)
 console.log(strngnum);
 console.log(typeof strngnum);
+//-----------------------------------
+console.log(null>0);
+console.log(null==0);
+console.log(null>=0);
+/* The reason is that an equality check == and comparisons > <
+>== <== work differently 
+comparisions covert null  to a number , treating it as 0.
+thats why (3)null>=0 is true and (1) null >0 is false.
+*/
