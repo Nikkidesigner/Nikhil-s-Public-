@@ -11,6 +11,9 @@ const obj ={
 }
 // console.log(typeof obj );
 // console.log(obj);
-let str = JSON.stringify(obj);
+let str = JSON.stringify(obj);// convert object into string 
 // console.log(typeof str)
-console.log(str);
+// console.log(str);
+let str2=JSON.parse(str);
+console.log(str2);
+console.log(typeof str2);
