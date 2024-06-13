@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color project</title>
+</head>
+<body>
+    <p>
+        <h3>
+            click on start button to  change the color 
+        </h3>
+    </p>
+    <button id="start">Start</button>
+    <p>
+        <h3>
+            click on stop to stop changing the color
+        </h3>
+        
+    </p>
+    
+    <button id="stop">Stop</button>
+</body>
+    <script>
+        const randomcolor = function()
+        {
+            const hex ="0123456789ABCDEF"
+            let color ='#'
+            // hex value of colors have 6 values e.g -  #FFFFFF hence we need to generate 6 characters hence take a loop for 6 times 
+            for(let i=0;i<6;i++)
+            {
+            color+= hex[Math.floor(Math.random()*16)];
+            }
+            return color;
+        };
+        let intervalid;
+       const startchangingcolor=function()
+        {
+            intervalid=setInterval(changebgcolor,500);
+        }
+        function changebgcolor()
+        {   
+             document.body.style.                     backgroundColor=randomcolor();
+
+        }  
+    
+            const stopchangingcolor = function ()
+        {
+            clearInterval(intervalid)
+            intervalid=null;
+
+        }
+        document.querySelector('#start').addEventListener('click',startchangingcolor)
+        document.querySelector('#stop').addEventListener('click',stopchangingcolor)
+    
+    </script>
+</html>

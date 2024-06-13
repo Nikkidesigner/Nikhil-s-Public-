@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interval</title>
+</head>
+<body>
+    <h1>tumhare liye flowers </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        const st = function() {
+            console.log("hi");
+        }
+
+        // Declare the interval variable in a higher scope
+        let startinterval;
+
+        document.querySelector('#start').addEventListener('click', function() {
+            // Clear any existing interval before starting a new one
+            clearInterval(startinterval);
+            startinterval = setInterval(st, 1000); // Set interval with a 1-second delay
+        });
+
+        document.querySelector('#stop').addEventListener('click', function() {
+            clearInterval(startinterval);
+        });
+    </script>
+</body>
+</html>

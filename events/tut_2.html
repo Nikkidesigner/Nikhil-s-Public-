@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tut_2</title>
+</head>
+<body>
+    <h1>Welcome Nikhil Pawar</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+     setTimeout(function(){console.log("I Think");},5000)
+     setTimeout(function(){console.log("Ajinkya is ");},6000)
+     setTimeout(function(){console.log("Gay ");},8000)
+     setTimeout(function(){console.log("and also simp");},10000)
+     //============================================
+     // you can also create a function and give the reference of the function to the setTimeout()
+    //  const heyNikhil = function(){console.log("welcome Niks");}
+    //  setTimeout(heyNikhil,6000)
+    //============================================
+    const var1=function(){document.querySelector('h1').innerHTML="king of apes"
+
+    }
+    setTimeout(var1,4000)
+    //==========================================
+    // clearing a timeout
+    const var2=function(){document.querySelector('h1').innerHTML="king of apes is ceaser"
+
+    }
+    const changeme=setTimeout(var2,6000)
+    document.querySelector('#stop').addEventListener('click',function () {
+        clearTimeout(changeme)
+        console.log("stopped");
+        
+    })
+</script>
+</html>

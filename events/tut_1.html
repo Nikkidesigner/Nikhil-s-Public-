@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+    <style>
+        #images
+        {
+           
+            margin: 50px;
+            border: 5px solid white;
+            
+        }
+    </style>
+</head>
+<body style="background-color: black;color: antiquewhite;">
+ <h2>Welcome</h2>  
+ <div>
+    <ul id="images">
+         <li> <img width="200px" id="img_1" src="img_1.JPG" alt="img_1"> </li>
+         <li> <img width="200px" id="img_2" src="img_2.JPG" alt="img_2"> </li>
+         <li> <img width="200px" id="img_3" src="img_3.JPG" alt="img_3"> </li>
+         <li> <img width="200px" id="img_4" src="img_4.JPG" alt="img_4"> </li>
+         <li><a style="color: aliceblue;" href="https://dacoe.ac.in/" id="google" target="_blank">DACOE</a></li>
+
+    </ul>
+ </div> 
+</body>
+<script>
+    // document.getElementById('img_1').onclick=function(){alert('owl clicked')}
+    // type, timestamp, defaultPrevented, 
+    //target, toElement, srcElement,currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keycode 
+    document.getElementById('img_2').addEventListener('click',function(e){console.log(e);})
+    // document.getElementById('images').addEventListener('click',function(e){console.log("img clicked");},)
+    // document.getElementById('img_4').addEventListener('click',function(e){console.log("img 4 clicked");})
+    // when we click on the 4th image the event "img 4 clicked" is first executed hence in order to achive the id-image first we use capturing mode.
+    //===============================================
+    // document.getElementById('images').addEventListener('click',function(e){console.log("img clicked");},false)
+    // //==================================================
+    // document.getElementById('img_4').addEventListener('click',function(e){console.log("img 4 clicked");
+    //     e.stopPropagation()
+    // },false)
+    // //==================================================
+    // document.getElementById('google').addEventListener('click',function(e){
+    //                  e.preventDefault()
+    //                  e.stopPropagation()
+    //                  console.log("google clicked");
+       
+    //              },false)
+    //======================================================
+    document.querySelector('#images').addEventListener('click',function (e){
+                     console.log(e.target);
+                },false)
+    //==========REMOVING THE ELEMENT============================
+    document.querySelector('#images').addEventListener('click',function (e) {
+        console.log(e.target.parentNode);
+        let removeit = e.target.parentNode
+        removeit.remove();
+        
+    })
+
+</script>
+</html>
